@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="bmi/bmi.css">
+
+    <!--fontawesome cdn file link-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <!--header section starts-->
+    <header class="header">
+
+        <a href="index.html" class="logo">Fitness<span> Club</span></a>
+
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <!--<a href="panda login form.html">Home</a>-->
+                    <a href="index.html">Home</a>
+                    <div class="program-container">
+                        <a>Programmes</a>
+                        <ul>
+                            <li><a href="Zumba Pages.html">Zumba</a></li>
+                            <li><a href="yoga.html">Yoga</a></li>
+                            <li><a href="taekwondo.html">Taekwondo</a></li>
+                            <li><a href="muaythai.html">Muay Thai</a></li>
+                        </ul>
+                    </div>
+                    <a href="bmi.html">BMI</a>
+                    <a href="booking.html">Booking</a>
+                    <a href="#footer">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="icons">
+            <a href="login.html" class="btn">Become a member</a>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+
+    </header>
+    <!--header section ends-->
+
+    <!--need this to make content appear below header-->
+    <div class="spacer-for-content">
+        &nbsp;
+    </div>
+
+    <header class="pageHeader">
+        <h1>Know Your BMI Now!</h1>
+    </header>
+
+    <section class="bmiBrief">
+        <h2>What is BMI?</h2>
+        <p>BMI (Body Mass Index) is a measure of body fat based on your height and weight. Use the form below to
+            calculate your BMI and find out what it means for your health.</p>
+    </section>
+
+    <button type="button" id="startButton" onclick="showCalculator()">Start BMI Calculation</button>
+
+    <section class="bmiCalculator" id="bmiCalculatorSection">
+        <h3>BMI Calculator</h3>
+        <form id="bmiForm">
+            <label for="height">Height (in cm):</label>
+            <input type="number" id="height" step="1" required><br><br>
+
+            <label for="weight">Weight (in kg):</label>
+            <input type="number" id="weight" step="1" required><br><br>
+
+            <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+        </form>
+
+        <div id="bmiResult" class="result"></div>
+        <div id="bmiType" class="result"></div>
+
+        <button id="articleLink" style="display:none;" onclick="showArticle()">Learn more about your BMI range</button>
+    </section>
+
+    <section class="bmiArticles" id="bmiArticles">
+        <div class="article" id="underweightArticle">
+            <h4>Underweight</h4>
+            <p>If your BMI is less than 18.5, you fall under the underweight category. It’s important to ensure you’re
+                consuming enough nutrients. A diet rich in proteins, healthy fats, and whole grains can help you gain
+                weight in a healthy manner.</p>
+            <p><b>Recommended Actions:</b></p>
+            <ul>
+                <li>Increase calorie intake with nutrient-dense foods.</li>
+                <li>Engage in strength-training exercises to build muscle mass.</li>
+                <li>Consult a healthcare provider or nutritionist.</li>
+            </ul>
+        </div>
+
+        <div class="article" id="normalweightArticle">
+            <h4>Normal Weight</h4>
+            <p>If your BMI is between 18.5 and 24.9, you are considered to have a healthy weight. Maintaining this
+                weight requires a balanced diet, regular exercise, and overall healthy lifestyle habits.</p>
+            <p><b>Recommended Actions:</b></p>
+            <ul>
+                <li>Continue a balanced diet with a variety of fruits, vegetables, and proteins.</li>
+                <li>Stay active with at least 150 minutes of moderate physical activity per week.</li>
+                <li>Regularly check your BMI to ensure you remain within the healthy range.</li>
+            </ul>
+        </div>
+
+        <div class="article" id="overweightArticle">
+            <h4>Overweight</h4>
+            <p>If your BMI is between 25 and 29.9, you are considered overweight. Reducing body weight through healthier
+                eating habits and increasing physical activity can help prevent potential health risks.</p>
+            <p><b>Recommended Actions:</b></p>
+            <ul>
+                <li>Focus on a diet lower in processed foods and refined sugars.</li>
+                <li>Increase your activity level to at least 30 minutes a day.</li>
+                <li>Monitor your portion sizes to prevent overeating.</li>
+            </ul>
+        </div>
+
+        <div class="article" id="obeseArticle">
+            <h4>Obesity</h4>
+            <p>If your BMI is 30 or higher, it is advisable to consult a healthcare provider for advice on managing your
+                weight. Obesity can increase the risk of chronic conditions such as heart disease, diabetes, and certain
+                cancers.</p>
+            <p><b>Recommended Actions:</b></p>
+            <ul>
+                <li>Seek guidance from a healthcare provider to develop a safe weight-loss plan.</li>
+                <li>Incorporate more physical activity into your daily routine, starting with moderate exercises.</li>
+                <li>Adopt a diet rich in vegetables, lean proteins, and whole grains while minimizing processed foods
+                    and sugary drinks.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="pageFooter">
+        <p>&copy; UTAR FICT BMI Calculator. All rights reserved.</p>
+    </footer>
+    <!--footer section starts-->
+    <footer id="footer" class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h4>about</h4>
+                <div class="text">
+                    <p>
+                        This is an assignment for UCCD2323 Front-End Web Development Course in UTAR.
+                        <br>The Author of this website are:
+                    </p>
+                </div>
+                <div class="author">
+                    <ul>
+                        <li>Chow Yong Xiang 2301664</li>
+                        <li>Loh Shin Yee 2203210​​</li>
+                        <li>Ng Jia Shan 2202567​</li>
+                        <li>Tan Shin Yi 2202568​​</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box">
+                <h4>contact</h4>
+                <div class="text">
+                    <p>
+                        Follow us on social media to stay updated with the latest news, promotions, and events. We’re
+                        here to support you on your fitness journey—reach out to us anytime!
+                    </p>
+                </div>
+                <div class="icon">
+                    <a href="/index.html">
+                        <i class="fas fa-map-marker-alt">
+                            Fitness Club
+                            123 Jalan Fitness,
+                            Taman Kesihatan,
+                            57000 Kuala Lumpur,
+                            Malaysia</i>
+                    </a>
+                    <br>
+                    <a href="#">
+                        <i class="fas fa-phone-alt">
+                            +60 12-345 6789
+                        </i>
+                    </a>
+                    <br>
+                    <a href="#">
+                        <i class="fas fa-envelope">
+                            clubfitness65@gmail.com
+                        </i>
+                    </a>
+                    <br>
+                    <a href="https://www.instagram.com/fitness_club_frontend?igsh=MTY5b2w4Mm9oeHMyMA==">
+                        <i class="fab fa-instagram">
+                            Instagram
+                        </i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--footer section starts-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var programButton = document.querySelector('.program-container > a'); // the element that triggers the dropdown
+            var programList = document.querySelector('.program-container ul'); // the dropdown list
+
+            programButton.addEventListener('click', function (event) {
+                event.preventDefault(); // prevent the anchor tag from following the URL
+                programList.style.display = (programList.style.display == 'block' ? 'none' : 'block'); // toggle display
+            });
+
+            // Optional: Click anywhere else to close the dropdown
+            document.addEventListener('click', function (event) {
+                if (!event.target.matches('.program-container, .program-container *')) {
+                    programList.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script src="bmi/bmi.js"></script>
+</body>
+
+</html>

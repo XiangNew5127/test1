@@ -1,0 +1,11 @@
+[
+  {
+    "email": "test@example.com",
+    "password": "$2a$08$LJd.Vz2N1MCwrH9lQaP2i.Yrq.60c6jrYhtS9IshpoBVxZJ7bFVfq",
+    "age": 25,
+    "gender": "male",
+    "birthday": "1998-01-01",
+    "fitnessGoal": "Lose weight",
+    "selfIntroduction": "I am excited to start my fitness journey!"
+  }
+]

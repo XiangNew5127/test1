@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Fitness Class Booking</title>
+    <link rel="stylesheet" href="booking/booking.css">
+</head>
+
+<body>
+    <!--header section starts-->
+    <header class="header">
+
+        <a href="index.html" class="logo">Fitness<span> Club</span></a>
+
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <!--<a href="panda login form.html">Home</a>-->
+                    <a href="index.html">Home</a>
+                    <div class="program-container">
+                        <a>Programmes</a>
+                        <ul>
+                            <li><a href="Zumba Pages.html">Zumba</a></li>
+                            <li><a href="yoga.html">Yoga</a></li>
+                            <li><a href="taekwondo.html">Taekwondo</a></li>
+                            <li><a href="muaythai.html">Muay Thai</a></li>
+                        </ul>
+                    </div>
+                    <a href="bmi.html">BMI</a>
+                    <a href="booking.html">Booking</a>
+                    <a href="#footer">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="icons">
+            <a href="login.html" class="btn">Become a member</a>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+
+    </header>
+    <!--header section ends-->
+
+    <!--need this to make content appear below header-->
+    <div class="spacer-for-content">
+        &nbsp;
+    </div>
+    <div class="container">
+        <h1>Book Your Fitness Class</h1>
+
+        <form id="booking-form">
+            <label for="fitness-type">Type of Fitness:</label>
+            <select id="fitness-type" name="fitness_type" required>
+                <option value="" disabled selected>--Choose Fitness Type--</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Taekwondo">Taekwondo</option>
+                <option value="Martial Arts">Muay Thai</option>
+                <option value="Zumba">Zumba</option>
+            </select>
+
+            <div id="trainer-section" class="hidden">
+                <label for="trainer">Select Trainer:</label>
+                <select id="trainer" name="trainer" required>
+                    <option value="" disabled selected>--Select Trainer--</option>
+                </select>
+            </div>
+
+            <div id="yoga-type-section" class="hidden">
+                <label for="yoga-type">Yoga Type:</label>
+                <select id="yoga-type" name="yoga_type" required>
+                    <option value="" disabled selected>--Select Yoga Type--</option>
+                </select>
+            </div>
+
+            <div id="day-section" class="hidden">
+                <label for="day">Select Day:</label>
+                <select id="day" name="day" required>
+                    <option value="" disabled selected>--Select Day--</option>
+                </select>
+            </div>
+
+            <div id="time-slot-section" class="hidden">
+                <label for="time-slot">Select Time Slot:</label>
+                <select id="time-slot" name="time_slot" required>
+                    <option value="" disabled selected>--Select Time Slot--</option>
+                </select>
+            </div>
+
+            <button type="button" onClick="myOnClickFn()">Submit</button>
+
+        </form>
+    </div>
+
+    <script>
+        const fitnessType = document.getElementById('fitness-type');
+        const trainerSection = document.getElementById('trainer-section');
+        const trainerSelect = document.getElementById('trainer');
+        const yogaTypeSection = document.getElementById('yoga-type-section');
+        const yogaTypeSelect = document.getElementById('yoga-type');
+        const daySection = document.getElementById('day-section');
+        const daySelect = document.getElementById('day');
+        const timeSlotSection = document.getElementById('time-slot-section');
+        const timeSlotSelect = document.getElementById('time-slot');
+
+        /*declare the name of the trainers*/
+        const trainers = {
+            Yoga: ['Crystal Liu', 'Dilraba Dilmurat'],
+            Taekwondo: ['Chong Yj San'],
+            'Martial Arts': ['Mr Rodtang Jitmuangnon'],
+            Zumba: ['Anellisa', 'Mellisa Wong', 'Jasmine', 'Samuel Girven']
+        };
+
+        const yogaTypes = {
+            'Crystal Liu': ['Hatha Yoga', 'Vinyasa Flow Yoga'],
+            'Dilraba Dilmurat': ['Ashtanga Yoga', 'Power Yoga']
+        };
+
+        /*decalre the days based on fitness type*/
+        const yogaDays = {
+            'Hatha Yoga': ['Tuesday', 'Wednesday', 'Thursday'],
+            'Vinyasa Flow Yoga': ['Tuesday', 'Thursday', 'Friday'],
+            'Ashtanga Yoga': ['Tuesday', 'Wednesday', 'Friday'],
+            'Power Yoga': ['Monday', 'Tuesday', 'Thursday']
+        };
+
+        const yogaTimeSlots = {
+            'Hatha Yoga': {
+                Tuesday: ['9:00 AM - 10:00 AM'],
+                Wednesday: ['10:15 AM - 11:15 AM', '6:00 AM - 8:00 AM'],
+                Thursday: ['8:00 AM - 10:00 AM', '8:00 PM - 10:00 PM']
+            },
+            'Vinyasa Flow Yoga': {
+                Tuesday: ['12:00 PM - 2:00 PM'],
+                Thursday: ['4:00 PM - 6:00 PM'],
+                Friday: ['9:00 AM - 11:00 AM']
+            },
+            'Ashtanga Yoga': {
+                Tuesday: ['12:00 PM - 2:00 PM'],
+                Wednesday: ['10:15 AM - 11:15 AM', '6:00 PM - 8:00 PM'],
+                Friday: ['8:00 AM - 10:00 AM']
+            },
+            'Power Yoga': {
+                Monday: ['9:00 AM - 10:00 AM', '6:00 PM - 8:00 PM'],
+                Tuesday: ['9:00 AM - 10:00 AM'],
+                Thursday: ['8:00 AM - 10:00 AM']
+            }
+        };
+
+        const taekwondoDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+        const taekwondoTimeSlots = {
+            Monday: ['9:00 AM - 10:00 AM', '10:00 AM - 11:00 AM'],
+            Tuesday: ['10:00 AM - 11:00 AM', '11:00 AM - 12:00 PM'],
+            Wednesday: ['12:00 PM - 1:00 PM', '1:00 PM - 2:00 PM'],
+            Thursday: ['4:00 PM - 5:00 PM', '5:00 PM - 6:00 PM']
+        };
+
+        const martialArtsDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+        const martialArtsTimeSlots = {
+            Monday: ['9:00 AM - 10:00 AM', '10:00 AM - 11:00 AM'],
+            Tuesday: ['10:00 AM - 11:00 AM', '11:00 AM - 12:00 PM'],
+            Wednesday: ['12:00 PM - 1:00 PM', '1:00 PM - 2:00 PM'],
+            Thursday: ['4:00 PM - 5:00 PM', '5:00 PM - 6:00 PM']
+        };
+
+        const zumbaDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+        const zumbaTimeSlots = {
+            Monday: ['9:00 AM - 10:00 AM', '10:00 AM - 11:00 AM'],
+            Tuesday: ['10:00 AM - 11:00 AM', '11:00 AM - 12:00 PM'],
+            Wednesday: ['12:00 PM - 1:00 PM', '1:00 PM - 2:00 PM'],
+            Thursday: ['4:00 PM - 5:00 PM', '5:00 PM - 6:00 PM']
+        };
+
+        fitnessType.addEventListener('change', function () {
+            const selectedFitness = this.value;
+            trainerSection.classList.toggle('hidden', !selectedFitness);
+            trainerSelect.innerHTML = '<option value="" disabled selected>--Select Trainer--</option>';
+
+            if (selectedFitness) {
+                trainers[selectedFitness].forEach(trainer => {
+                    const option = document.createElement('option');
+                    option.value = trainer;
+                    option.textContent = trainer;
+                    trainerSelect.appendChild(option);
+                });
+            }
+            yogaTypeSection.classList.add('hidden');
+            daySection.classList.add('hidden');
+            timeSlotSection.classList.add('hidden');
+        });
+
+        trainerSelect.addEventListener('change', function () {
+            const selectedTrainer = this.value;
+            if (selectedTrainer === 'Crystal Liu' || selectedTrainer === 'Dilraba Dilmurat') {
+                yogaTypeSection.classList.remove('hidden');
+                yogaTypeSelect.innerHTML = '<option value="" disabled selected>--Select Yoga Type--</option>';
+                yogaTypes[selectedTrainer].forEach(yogaType => {
+                    const option = document.createElement('option');
+                    option.value = yogaType;
+                    option.textContent = yogaType;
+                    yogaTypeSelect.appendChild(option);
+                });
+            } else {
+                yogaTypeSection.classList.add('hidden');
+                daySection.classList.remove('hidden');
+                daySelect.innerHTML = '<option value="" disabled selected>--Select Day--</option>';
+
+                if (selectedTrainer === 'Chong Yj San') {
+                    taekwondoDays.forEach(day => {
+                        const option = document.createElement('option');
+                        option.value = day;
+                        option.textContent = day;
+                        daySelect.appendChild(option);
+                    });
+                } else if (selectedTrainer === 'Mr Rodtang Jitmuangnon') {
+                    martialArtsDays.forEach(day => {
+                        const option = document.createElement('option');
+                        option.value = day;
+                        option.textContent = day;
+                        daySelect.appendChild(option);
+                    });
+                } else if (['Anellisa', 'Mellisa Wong', 'Jasmine', 'Samuel Girven'].includes(selectedTrainer)) {
+                    zumbaDays.forEach(day => {
+                        const option = document.createElement('option');
+                        option.value = day;
+                        option.textContent = day;
+                        daySelect.appendChild(option);
+                    });
+                }
+                timeSlotSection.classList.add('hidden');
+            }
+        });
+
+        yogaTypeSelect.addEventListener('change', function () {
+            const selectedYogaType = this.value;
+            daySection.classList.remove('hidden');
+            daySelect.innerHTML = '<option value="" disabled selected>--Select Day--</option>';
+
+            yogaDays[selectedYogaType].forEach(day => {
+                const option = document.createElement('option');
+                option.value = day;
+                option.textContent = day;
+                daySelect.appendChild(option);
+            });
+
+            timeSlotSection.classList.add('hidden');
+        });
+
+        daySelect.addEventListener('change', function () {
+            const selectedDay = this.value;
+            const selectedTrainer = trainerSelect.value;
+            const selectedFitness = fitnessType.value;
+            const selectedYogaType = yogaTypeSelect.value;
+
+            timeSlotSection.classList.remove('hidden');
+            timeSlotSelect.innerHTML = '<option value="" disabled selected>--Select Time Slot--</option>';
+
+            if (selectedFitness === 'Yoga') {
+                yogaTimeSlots[selectedYogaType][selectedDay].forEach(timeSlot => {
+                    const option = document.createElement('option');
+                    option.value = timeSlot;
+                    option.textContent = timeSlot;
+                    timeSlotSelect.appendChild(option);
+                });
+            } else if (selectedTrainer === 'Chong Yj San') {
+                taekwondoTimeSlots[selectedDay].forEach(timeSlot => {
+                    const option = document.createElement('option');
+                    option.value = timeSlot;
+                    option.textContent = timeSlot;
+                    timeSlotSelect.appendChild(option);
+                });
+            } else if (selectedTrainer === 'Mr Rodtang Jitmuangnon') {
+                martialArtsTimeSlots[selectedDay].forEach(timeSlot => {
+                    const option = document.createElement('option');
+                    option.value = timeSlot;
+                    option.textContent = timeSlot;
+                    timeSlotSelect.appendChild(option);
+                });
+            } else if (['Anellisa', 'Mellisa Wong', 'Jasmine', 'Samuel Girven'].includes(selectedTrainer)) {
+                zumbaTimeSlots[selectedDay].forEach(timeSlot => {
+                    const option = document.createElement('option');
+                    option.value = timeSlot;
+                    option.textContent = timeSlot;
+                    timeSlotSelect.appendChild(option);
+                });
+            }
+        });
+
+        function myOnClickFn() {
+            document.location.href = "submit.html";
+        }
+    </script>
+
+    <!--footer section starts-->
+    <footer id="footer" class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h4>about</h4>
+                <div class="text">
+                    <p>
+                        This is an assignment for UCCD2323 Front-End Web Development Course in UTAR.
+                        <br>The Author of this website are:
+                    </p>
+                </div>
+                <div class="author">
+                    <ul>
+                        <li>Chow Yong Xiang 2301664</li>
+                        <li>Loh Shin Yee 2203210​​</li>
+                        <li>Ng Jia Shan 2202567​</li>
+                        <li>Tan Shin Yi 2202568​​</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box">
+                <h4>contact</h4>
+                <div class="text">
+                    <p>
+                        Follow us on social media to stay updated with the latest news, promotions, and events. We’re
+                        here to support you on your fitness journey—reach out to us anytime!
+                    </p>
+                </div>
+                <div class="icon">
+                    <a href="#">
+                        <i class="fas fa-map-marker-alt">
+                            Fitness Club
+                            123 Jalan Fitness,
+                            Taman Kesihatan,
+                            57000 Kuala Lumpur,
+                            Malaysia</i>
+                    </a>
+                    <br>
+                    <a href="#">
+                        <i class="fas fa-phone-alt">
+                            +60 12-345 6789
+                        </i>
+                    </a>
+                    <br>
+                    <a href="#">
+                        <i class="fas fa-envelope">
+                            clubfitness65@gmail.com
+                        </i>
+                    </a>
+                    <br>
+                    <a href="https://www.instagram.com/fitness_club_frontend?igsh=MTY5b2w4Mm9oeHMyMA==">
+                        <i class="fab fa-instagram">
+                            Instagram
+                        </i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer section starts-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var programButton = document.querySelector('.program-container > a'); // the element that triggers the dropdown
+            var programList = document.querySelector('.program-container ul'); // the dropdown list
+
+            programButton.addEventListener('click', function (event) {
+                event.preventDefault(); // prevent the anchor tag from following the URL
+                programList.style.display = (programList.style.display == 'block' ? 'none' : 'block'); // toggle display
+            });
+
+            // Optional: Click anywhere else to close the dropdown
+            document.addEventListener('click', function (event) {
+                if (!event.target.matches('.program-container, .program-container *')) {
+                    programList.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

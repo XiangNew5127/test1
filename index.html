@@ -1,0 +1,308 @@
+<!--Semantics Tags
+    <div>
+    <header>
+    <main>
+    <section>
+    <article>
+    <aside>
+    <footer> 
+-->
+
+<!--
+jQuery: 
+1) scroll to
+2) change background color of header
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Website</title>
+    <link rel="stylesheet" href="main/reset.css">
+    <link rel="stylesheet" href="main/style.css">
+
+    <!--fontawesome cdn file link-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" 
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+    crossorigin="anonymous"></script>
+
+    <script>
+        jQuery(function($){
+            var $navbar = $('.header');
+            $(window).scroll(function(event){
+                var $current = $(this).scrollTop();
+                if($current > 10){
+                    $navbar.addClass('navbar-color');
+                }
+                else{
+                    $navbar.removeClass('navbar-color');
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>    
+
+    <!-- header section starts-->
+    <!-- <header class="header">
+        <a href="#" class="logo">Fitness<span> Club</span></a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">home</a></li>
+                <li class="program-container"><a href="#">
+                    > program</a>
+                    <ul>
+                        <li><a href="#">Zumba</a></li>
+                        <li><a href="#">Yoga</a></li>
+                        <li><a href="taekwondo_bmi/taekwonde/taekwondo.html">Taekwondo</a></li>
+                        <li><a href="#">Muay Thai</a></li>
+                    </ul>
+                </li>
+                <li><a href="taekwondo_bmi/bmi/bmi.html">BMI</a></li>
+                <li><a href="#">booking</a></li>
+                <li><a href="#footer">contact</a></li>
+            </ul>    
+        </nav>
+        <div class="login">
+            <a href="#" class="btn">Login / Profile</a>
+        </div>
+    </header>     -->
+    <!--header section ends -->
+    <!--header section starts-->
+    <header class="header">
+
+        <a href="index.html" class="logo">Fitness<span> Club</span></a>
+
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <!--<a href="panda login form.html">Home</a>-->
+                    <a href="index.html">Home</a>
+                    <div class="program-container">
+                        <a>Programmes</a>
+                        <ul>
+                            <li><a href="Zumba Pages.html">Zumba</a></li>
+                            <li><a href="yoga.html">Yoga</a></li>
+                            <li><a href="taekwondo.html">Taekwondo</a></li>
+                            <li><a href="muaythai.html">Muay Thai</a></li>
+                        </ul>
+                    </div>
+                    <a href="bmi.html">BMI</a>
+                    <a href="booking.html">Booking</a>
+                    <a href="#footer">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="icons">
+            <a href="login.html" class="btn">Become a member</a>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+
+    </header>
+    <!--header section ends-->
+
+    <!--need this to make content appear below header-->
+    <div class="spacer-for-content">
+        &nbsp;
+    </div>
+    
+    <video autoplay loop muted plays-inline class="main-video">
+        <source src="main/gym_video.mp4" type="video/mp4">
+    </video>
+
+    <section class="hook-section">
+        <div class="hook-quote">
+            <div class="hook-quote-main">
+                <h1>Crush Your Health and Fitness Goals <br> in No Time</h1>
+            </div>
+            <div class="hook-quote-sub">
+                <h4>WORK</h4>
+                <h4>SWEAT</h4>
+                <h4>ACHEIVE</h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="market-section">
+        <div class="market-section-button">
+            <button onclick="location.href = 'booking.html';">Start Booking Now</button>
+        </div>
+    </section>
+
+    <section class="linking-section">
+        <div class="linking-section-blobs">
+            <button onClick="document.getElementById('about-us-section').scrollIntoView();">About us</button>
+            <button onClick="document.getElementById('our-vision-section').scrollIntoView();">Our Mission</button>
+            <button onclick="location.href = 'bmi.html';">BMI Calculator</button>
+            <button onClick="document.getElementById('personal-trainer-section').scrollIntoView();">View Programmes</button>
+        </div>
+    </section>
+
+    <section id="about-us-section" class="about-us-section">
+        <div class="about-us-text">
+            <h2>About Us</h2>
+            <h3>Professional & Experienced</h3>
+            <p>
+                At Fitness Club, established in 2016, we are committed to being more than just a 
+                fitness center; we are a vibrant community focused on transforming lives through 
+                personalized training in Taekwondo, Yoga, Zumba, and Muay Thai. Our mission is to 
+                empower individuals to achieve their highest potential by offering expert-led, 
+                customized fitness programs that promote not only physical strength but also holistic 
+                well-being, balancing the mind, body, and spirit. Our certified trainers bring unparalleled 
+                expertise and passion, ensuring that every client receives the tailored support they need 
+                to turn their fitness aspirations into reality. At Fitness Club, we believe in fostering 
+                a supportive environment where growth, resilience, and personal excellence are celebrated.
+            </p>
+        </div>
+        <div class="about-us-image">
+            <img src="main/logo_main.png" alt="About Us Image">
+        </div>
+    </section>
+
+    <section id="our-vision-section" class="our-vision-section">
+        <h2>Our Mission</h2>
+        <div class="our-vision-text">            
+            <div class="our-mission">
+                <h3>Our Commitment to Excellence</h3>
+                <p>
+                    At <strong>Fitness Club</strong>, our vision is clear: to be the leading force in personalized fitness training, empowering individuals to unlock their full potential. We are dedicated to setting the highest standards in the industry, delivering exceptional service, and continuously evolving to meet the needs of our members.
+                </p>
+            </div>
+            <div class="our-mission">
+                <h3>Holistic Wellness</h3>
+                <p>
+                We envision a world where fitness is not just about physical strength, but about achieving a harmonious balance between the body, mind, and spirit. Our programs are designed to promote overall well-being, encouraging our members to live healthier, happier lives.
+                </p>
+            </div>
+            <div class="our-mission">
+                <h3>Empowering Through Expertise</h3>
+                <p>
+                We aim to cultivate an environment where every individual feels supported, motivated, and challenged to reach their highest potential. By leveraging the expertise of our certified trainers, we strive to provide personalized training that is both effective and transformative.
+                </p>
+            </div>
+            <div class="our-mission">
+                <h3>A Community of Growth</h3>
+                <p>
+                We see our fitness club as a vibrant community where members uplift each other, share their successes, and grow together. Our vision is to foster a space where everyone—from beginners to advanced practitioners—can find their place and achieve their personal best.
+                </p>
+            </div>                                    
+        </div>
+    </section>
+
+    <section id="personal-trainer-section" class="personal-trainer-section">
+        <h2>Programmes Available</h2>
+        <section class="personal-trainer">
+            <div class="trainer-card">
+                <div class="trainer-image trainer-1"></div>
+                <h2>Yoga</h2>
+                <p>Enhance flexibility and reduce stress with our Yoga sessions. Perfect for all levels, our classes bring balance to your body and mind. Join us for a journey to wellness.</p>
+                <a href="yoga.html">Book Now</a>
+            </div>
+            <div class="trainer-card">
+                <div class="trainer-image trainer-2"></div>
+                <h2>Taekwondo</h2>
+                <p>Learn self-defense, discipline, and agility through Taekwondo. Whether you're starting out or advancing, our classes help you achieve martial arts mastery.</p>
+                <a href="taekwondo.html">Book Now</a>
+            </div>
+            <div class="trainer-card">
+                <div class="trainer-image trainer-3"></div>
+                <h2>Muay Thai</h2>
+                <p>Strengthen your body and mind with Muay Thai. Our expert-led classes teach powerful techniques and build confidence. Step into the ring and challenge yourself.</p>
+                <a href="muaythai.html">Book Now</a>
+            </div>
+            <div class="trainer-card">
+                <div class="trainer-image trainer-4"></div>
+                <h2>Zumba</h2>
+                <p>Burn calories and have fun with Zumba! Our high-energy classes make fitness a blast. Dance your way to a fitter, happier you.</p>
+                <a href="Zumba Pages.html">Book Now</a>
+            </div>
+        </section>
+    </section>
+    
+    <!--footer section starts-->
+    <footer id="footer" class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h4>about</h4>
+                <div class="text">
+                    <p>
+                        This is an assignment for UCCD2323 Front-End Web Development Course in UTAR. 
+                        <br>The Author of this website are:
+                    </p>
+                </div>
+                <div class="author">
+                    <ul>
+                        <li>Chow Yong Xiang 2301664</li>
+                        <li>Loh Shin Yee 2203210​​</li>
+                        <li>Ng Jia Shan 2202567​</li>
+                        <li>Tan Shin Yi 2202568​​</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="box">
+                <h4>contact</h4>
+                <div class="text">
+                    <p>
+                        Follow us on social media to stay updated with the latest news, promotions, and events. We’re here to support you on your fitness journey—reach out to us anytime!
+                    </p>
+                </div>
+                <div class="icon">
+                    <a href="index.html">
+                        <i class="fas fa-map-marker-alt">
+                             Fitness Club
+                            123 Jalan Fitness,
+                            Taman Kesihatan,
+                            57000 Kuala Lumpur,
+                            Malaysia</i>
+                    </a>
+                    <br>
+                    <a href="#">
+                        <i class="fas fa-phone-alt">
+                             +60 12-345 6789
+                        </i>
+                    </a>
+                    <br>
+                    <a href="#">
+                        <i class="fas fa-envelope" style="text-transform: none;">
+                            clubfitness65@gmail.com
+                       </i>                       
+                    </a>
+                    <br>
+                    <a href="https://www.instagram.com/fitness_club_frontend?igsh=MTY5b2w4Mm9oeHMyMA==">
+                        <i class="fab fa-instagram">
+                             Instagram
+                        </i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer section end-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var programButton = document.querySelector('.program-container > a'); // the element that triggers the dropdown
+            var programList = document.querySelector('.program-container ul'); // the dropdown list
+        
+            programButton.addEventListener('click', function(event) {
+                event.preventDefault(); // prevent the anchor tag from following the URL
+                programList.style.display = (programList.style.display == 'block' ? 'none' : 'block'); // toggle display
+            });
+        
+            // Optional: Click anywhere else to close the dropdown
+            document.addEventListener('click', function(event) {
+                if (!event.target.matches('.program-container, .program-container *')) {
+                    programList.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

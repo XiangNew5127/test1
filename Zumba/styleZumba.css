@@ -1,0 +1,564 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+    --main-color: #f73471;
+    --black: #000;
+    --light-color: #868e96;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+::selection{
+    background: var(--main-color);
+    color: #fff;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: #fafafa;
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 5rem;
+}
+
+section{
+    padding: 2rem 9%;
+}
+
+.heading{
+    font-size: 4rem;
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+.button {
+    display: flex;
+    justify-content: space-between; /* This will space the buttons evenly */
+    align-items: center; /* This will center the buttons vertically */
+    padding: 1rem; /* Optional: Adds some padding inside the button container */
+    width: 100%; /* Ensures the container takes full width */
+}
+
+.btn-1 {
+    flex-grow: 1; /* Allows each button to grow and fill the space */
+    text-align: center; /* Centers the text within each button */
+}
+
+.btn-1 a {
+    display: block; /* Makes the link fill the button for a larger clickable area */
+    padding: 0.8rem 1rem; /* Adds some padding for spacing and appearance */
+    color: var(--main-color); /* Sets the text color using the CSS variable */
+    background-color: transparent; /* Sets the background color to transparent */
+    border-radius: 5px; /* Optional: Rounds the corners of the buttons */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.btn-1 a:hover {
+    background-color: var(--main-color); /* Changes background on hover */
+    color: white; /* Changes text color on hover */
+}
+
+.heading span{
+    text-transform: uppercase;
+    color: var(--main-color);
+}
+
+.btn-1 a {
+    display: block; /* Makes the link fill the button for a larger clickable area */
+    padding: 0.8rem 1rem; /* Adds some padding for spacing and appearance */
+    color: black; /* Sets the text color using the CSS variable */
+    background-color: white; /* Sets the background color */
+    border-radius: 5px; /* Optional: Rounds the corners of the buttons */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.btn-1 a:hover {
+    background-color: var(--main-color); /* Changes background on hover */
+    color: white; /* Changes text color on hover */
+}
+
+
+
+/*----------------home section starts--------------*/
+
+.home{
+    padding: 0;
+}
+
+.home .home-slider .box{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.home .home-slider .box .content{
+    text-align: center;
+    max-width: 70rem;
+}
+
+.home .home-slider .box .content h3{
+    font-size: 5rem;
+    color: #fff;
+    text-transform: uppercase;
+    transition-delay: .2s;
+}
+
+.home .home-slider .box .content p{
+    font-size: 1.7rem;
+    color: #eee;
+    padding: 1rem 0;
+    transition-delay: .4s;
+}
+
+.home .home-slider .box .button .btn-1{
+    background: var(--main-color);
+    color: #fff;
+    margin-right: .5rem;
+}
+
+.home .home-slider .box .button .btn-1:hover{
+    background: #fff;
+    color: var(--main-color);
+}
+
+.home .home-slider .box .button{
+    transition-delay: .6s;
+}
+
+.home .home-slider .box .content > *{
+    transform: translateY(2rem);
+    opacity: 0;
+}
+
+.home .home-slider .swiper-slide-active .content > *{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/*.home .home-slider .box .content > *{
+    transform: translateY(0);
+    opacity: 1;
+}*/
+
+
+/*----------------home section ends--------------*/
+
+/*----------------features section starts--------------*/
+
+.feature .feature-slider{
+    padding-bottom: 4rem;
+}
+
+.feature .feature-slider .box{
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.feature .feature-slider .box .image{
+    height: 40rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.feature .feature-slider .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.feature .feature-slider .box:hover .image img{
+    transform: scale(1.2);
+}
+
+.feature .feature-slider .box .content{
+    padding: 1rem 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    align-items: center;
+}
+
+
+.feature .feature-slider .box .content h3{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    background: rgba(0,0,0,.3);
+    padding: .2rem;
+    margin-top: .5rem;
+}
+
+.feature .feature-slider .box .content .price{
+    width: 10rem;
+    height: 10rem;
+    line-height: 10rem;
+    border-radius: 50%;
+    text-align: center;
+    margin: auto;
+    background: var(--main-color);
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #fff;
+}
+
+.feature .feature-slider .box:hover .content .price{
+    background: none;
+    border: .3rem solid #fff;
+}
+
+/*----------------features section ends--------------*/
+
+/*----------------schedule section starts--------------*/
+
+.schedule{
+    background: #eee;
+}
+
+.schedule .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+}
+
+.schedule .box-container .box{
+    background: #fff;
+    overflow: hidden;
+}
+
+.schedule .box-container .box .content{
+    padding: 2rem;
+}
+
+.schedule .box-container .box .content h3{
+    font-size: 2rem;
+    font-weight: 500;
+    padding-bottom: .5rem;
+}
+
+.schedule .box-container .box .content p{
+    color: #333;
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+.schedule .box-container .box .icons{
+    padding: 0 2rem;
+}
+
+.schedule .box-container .box .icons span{
+    display: block;
+    font-size: 1.3rem;
+    color: #333;
+    padding: .3rem 0;
+}
+
+.schedule .box-container .box .icons span i{
+    margin-right: .5rem;
+}
+
+.schedule .box-container .box .btn{
+    margin: 1.5rem 2rem;
+    background: var(--main-color);
+    color: #fff;
+ }
+
+ .schedule .box-container .box .btn:hover{
+    background: #f66a97;
+}
+
+.schedule .box-container .box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*----------------schedule section starts--------------*/
+
+/*----------------trainer section starts--------------*/
+
+.trainers .trainer-slider{
+    padding-bottom: 4rem;
+}
+
+.trainers .trainer-slider .box{
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.trainers .trainer-slider .box .image{
+    height: 40rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.trainers .trainer-slider .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.trainers .trainer-slider .box .name{
+    padding: 2rem 0;
+}
+
+.trainers .trainer-slider .box .name h1{
+    font-size: 3rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.trainers .trainer-slider .box .name p{
+    font-size: 2rem;
+    color: #808080;
+}
+
+/*----------------trainer section ends--------------*/
+
+/* -------------------------------------------- blogs section starts ---------------------  */
+
+.blogs .blogs-slider{
+    padding-bottom: 4rem;
+}
+
+.blogs .blogs-slider .box{
+    position: relative;
+    overflow: hidden;
+    margin: 1rem 0;
+    background: #fafafa;
+    box-shadow: 0 .5rem .5rem rgba(0,0,0,.3);
+}
+
+.blogs .blogs-slider .box .image{
+    height: 40rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.blogs .blogs-slider .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blogs .blogs-slider .box:hover .image img{
+    transform: scale(1.2);
+}
+
+.blogs .blogs-slider .box .content{
+    padding: 2rem;
+    padding-bottom: 1rem;
+}
+
+.blogs .blogs-slider .box .content h3{
+    font-size: 2rem;
+    color: var(--black);
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
+.blogs .blogs-slider .box .content span{
+    font-size: 1.3rem;
+    color: #808080;
+}
+
+.blogs .blogs-slider .box .content span i{
+    margin-right: .5rem;
+    color: var(--main-color);
+}
+
+.blogs .blogs-slider .box .content p{
+    padding-top: 1rem;
+    color: #808080;
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+.blogs .blogs-slider .box .button{
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.blogs .blogs-slider .box .btn{
+    background: var(--main-color);
+    color: #fff;
+}
+
+/* -------------------------------------------- blogs section ends ---------------------  */
+
+/* ------------------------------------------- testimonial section starts --------------------  */
+
+.things .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+    padding: 7rem 0;
+}
+
+.things .box-container .box{
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+    background: #fafafa;
+    box-shadow: 0 .1rem .5rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+}
+
+.things .box-container .box:hover{
+    transform: translateY(-10%);
+    transition: .3s linear;
+    background: #fff;
+    border: .2rem solid #f8f8a1;
+}
+
+.things .box-container .box .image{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5rem;
+}
+
+.things .box-container .image img{
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: -6rem;
+}
+
+.things .box-container .name{
+    padding: 1rem 0;
+} 
+
+.things .box-container .name h1{
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.things .box-container .name p{
+    color: #222;
+    font-size: 1.3rem;
+}
+
+.things .box-container .name p span{
+    text-transform: none;
+}
+
+.things .box-container .box p{
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 400;
+    line-height: 1.8;
+} 
+
+.video-container {
+    position: relative;
+    width: 60%; /* Adjust this value to make the video smaller or larger */
+    height: 0;
+    padding-bottom: 33.75%; /* Adjust this value based on the aspect ratio you desire */
+    margin: auto; /* Centers the video container horizontally */
+    overflow: hidden;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+/* ------------------------------------------- testimonial section ends --------------------  */
+
+
+
+
+
+
+
+/*---------------media queries section-----------------*/
+
+@media (max-width: 991px){
+
+    html{
+        font-size: 55%;
+    }
+
+   
+
+    section{
+        padding: 2rem;
+    }
+}
+
+/*---------------for maxwidth 768px-----------------*/
+
+@media (max-width: 768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    
+
+
+    .feature .feature-slider .box .content h3{
+        padding: 1rem;
+    }
+
+    .things.box-container{
+        padding: 1rem 0;
+    }
+
+    .things.box-container .box{
+        margin-top: 6rem;
+    }
+}
+
+
+/*---------------for max-width 450px-----------------*/
+
+@media (max-width: 450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
+

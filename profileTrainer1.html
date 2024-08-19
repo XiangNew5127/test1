@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Profile Details</title>
+    <link rel="stylesheet" href="yoga/yoga.css"> <!-- Link to the external CSS file -->
+    <!--fontawesome cdn file link-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <!--header section starts-->
+    <header class="header">
+
+        <a href="index.html" class="logo">Fitness<span> Club</span></a>
+
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <!--<a href="panda login form.html">Home</a>-->
+                    <a href="index.html">Home</a>
+                    <div class="program-container">
+                        <a>Programmes</a>
+                        <ul>
+                            <li><a href="Zumba Pages.html">Zumba</a></li>
+                            <li><a href="yoga.html">Yoga</a></li>
+                            <li><a href="taekwondo.html">Taekwondo</a></li>
+                            <li><a href="muaythai.html">Muay Thai</a></li>
+                        </ul>
+                    </div>
+                    <a href="bmi.html">BMI</a>
+                    <a href="booking.html">Booking</a>
+                    <a href="#footer">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="icons">
+            <a href="login.html" class="btn">Become a member</a>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+
+    </header>
+    <!--header section ends-->
+
+    <!--need this to make content appear below header-->
+    <div class="spacer-for-content">
+        &nbsp;
+    </div>
+
+    <div class="container">
+        <div class="details">
+            <h2>Personal Details</h2>
+            <p><strong>Name:</strong> Crystal Liu</p>
+            <p><strong>Age:</strong> 29</p>
+            <p><strong>Race:</strong> Chinese</p>
+            <p><strong>Experience:</strong> Over 10 years of experience in teaching yoga</p>
+            <p><strong>Specializations:</strong> Hatha Yoga, Vinyasa Flow Yoga</p>
+            <p><strong>Certification:</strong> Certified by Yoga Alliance</p>
+            <p><strong>Achievements:</strong></p>
+            <ul>
+                <li>Yoga Education Excellence Award 2019</li>
+                <li>Outstanding Yoga Instructor Award 2023</li>
+                <li>Top Yoga Studio Collaboration 2020</li>
+                <li>Top Wellness Coach 2024</li>
+            </ul>
+            <p><strong>Phone Number:</strong> 012-11481234</p>
+            <p><strong>Email address:</strong> yifei@gmail.com</p>
+
+            <h2>About Me</h2>
+            <p>My teaching method explores spiritual disciplines, allowing students to delve deeply within
+                themselves to reach higher realms. I am passionate about guiding people toward physical and
+                mental balance, helping them achieve equilibrium both within themselves and in their bodies.
+                <a href="scheduleTrainer1.html"> View my schedule</a>
+            </p>
+
+        </div>
+        <div class="photo">
+            <img src="yoga/TrainerProfile/trainer1_profile.jpeg" alt="Profile Photo">
+        </div>
+    </div>
+
+   
+    <!--footer section starts-->
+    <footer id="footer" class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h4>about</h4>
+                <div class="text">
+                    <p>
+                        This is an assignment for UCCD2323 Front-End Web Development Course in UTAR.
+                        <br>The Author of this website are:
+                    </p>
+                </div>
+                <div class="author">
+                    <ul>
+                        <li>Chow Yong Xiang 2301664</li>
+                        <li>Loh Shin Yee 2203210​​</li>
+                        <li>Ng Jia Shan 2202567​</li>
+                        <li>Tan Shin Yi 2202568​​</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box">
+                <h4>contact</h4>
+                <div class="text">
+                    <p>
+                        Follow us on social media to stay updated with the latest news, promotions, and events. We’re
+                        here to support you on your fitness journey—reach out to us anytime!
+                    </p>
+                </div>
+                <div class="icon">
+                    <a href="#">
+                        <i class="fas fa-map-marker-alt">
+                            Fitness Club
+                            123 Jalan Fitness,
+                            Taman Kesihatan,
+                            57000 Kuala Lumpur,
+                            Malaysia</i>
+                    </a>
+                    <br>
+                    <a href="#">
+                        <i class="fas fa-phone-alt">
+                            +60 12-345 6789
+                        </i>
+                    </a>
+                    <br>
+                    <a href="#">
+                        <i class="fas fa-envelope">
+                            clubfitness65@gmail.com
+                        </i>
+                    </a>
+                    <br>
+                    <a href="https://www.instagram.com/fitness_club_frontend?igsh=MTY5b2w4Mm9oeHMyMA==">
+                        <i class="fab fa-instagram">
+                            Instagram
+                        </i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer section starts-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var programButton = document.querySelector('.program-container > a'); // the element that triggers the dropdown
+            var programList = document.querySelector('.program-container ul'); // the dropdown list
+
+            programButton.addEventListener('click', function (event) {
+                event.preventDefault(); // prevent the anchor tag from following the URL
+                programList.style.display = (programList.style.display == 'block' ? 'none' : 'block'); // toggle display
+            });
+
+            // Optional: Click anywhere else to close the dropdown
+            document.addEventListener('click', function (event) {
+                if (!event.target.matches('.program-container, .program-container *')) {
+                    programList.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

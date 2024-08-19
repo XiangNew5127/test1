@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Fitness Profile</title>
+        <link rel="stylesheet" href="Login/stylesLogin.css">
+        
+    </head>
+
+  
+        
+        <div class="profile-container">
+            <div class="profile-header">
+                <img id="displayPhoto" src="Login/default-profile.png" alt="Profile Photo" class="profile-photo">
+                <h2 id="profileName">------------------</h2>
+            </div>
+            <div id="profileView" class="profile-content">
+                <p><strong>Email:</strong> <span id="profileEmail">ava@gmail.com</span></p>
+                <p><strong>Age:</strong> <span id="profileAge">23</span></p>
+                <p><strong>Gender:</strong> <span id="profileGender">male</span></p>
+                <p><strong>Birthday:</strong> <span id="profileBirthday">2024-08-14</span></p>
+                <p><strong>Fitness Goal:</strong> <span id="profileFitnessGoal">99999</span></p>
+                <p><strong>Self Introduction:</strong> <span id="profileSelfIntroduction">Not Provided</span></p>
+                <div class="button-container">
+                    <button id="editProfile" class="profile-button" onclick="toggleEditProfile()">Edit Profile</button>
+                    <button id="logout" class="profile-button logout-button" onclick="logoutUser()">Logout</button>
+                    <button id="goToAnotherPage" class="profile-button another-page-button" onclick="goToAnotherPage()">Welcome to Fitness Club</button>
+                </div>
+            </div>
+
+            <div id="editProfileForm" class="edit-form" style="display:none;">
+                <form id="updateForm" onsubmit="updateProfile(event)">
+                    <br>
+                    <label for="editEmail">Email:</label>
+                    <input type="email" id="editEmail" name="editEmail" disabled><br>
+
+                    <label for="editAge">Age:</label>
+                    <input type="number" id="editAge" name="editAge"><br>
+
+                    <label for="editGender">Gender:</label>
+                    <input type="text" id="editGender" name="editGender"><br>
+
+                    <label for="editBirthday">Birthday:</label>
+                    <input type="date" id="editBirthday" name="editBirthday"><br>
+
+                    <label for="editFitnessGoal">Fitness Goal:</label>
+                    <input type="text" id="editFitnessGoal" name="editFitnessGoal"><br>
+
+                    <label for="editSelfIntroduction">Self Introduction:</label>
+                    <textarea id="editSelfIntroduction" name="editSelfIntroduction"></textarea><br>
+
+                    <label for="editProfilePhoto">Profile Photo:</label>
+                    <input type="file" id="editProfilePhoto" name="editProfilePhoto"><br>
+
+                    <input type="submit" value="Save Changes">
+                    <button type="button" class="profile-button cancel-button" onclick="toggleEditProfile()">Cancel</button>
+                </form>
+            </div>
+        </div>
+
+
+
+        <script src="Login/scriptLogin.js"></script>
+    </body>
+</html>

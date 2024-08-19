@@ -1,0 +1,316 @@
+<!--Semantics Tags
+    <div>
+    <header>
+    <main>
+    <section>
+    <article>
+    <aside>
+    <footer> 
+-->
+
+<!--
+jQuery: 
+1) scroll to
+2) change background color of header
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Website</title>
+    <link rel="stylesheet" href="muaythai/reset.css">
+    <link rel="stylesheet" href="muaythai/muaythai.css">
+
+    <!--fontawesome cdn file link-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" 
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+    crossorigin="anonymous"></script>
+
+    <script>
+        jQuery(function($){
+            var $navbar = $('.header');
+            $(window).scroll(function(event){
+                var $current = $(this).scrollTop();
+                if($current > 10){
+                    $navbar.addClass('navbar-color');
+                }
+                else{
+                    $navbar.removeClass('navbar-color');
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>    
+
+    <header class="header">
+
+        <a href="index.html" class="logo">Fitness<span> Club</span></a>
+
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                    <div class="program-container">
+                        <a>Programmes</a>
+                        <ul>
+                            <li><a href="Zumba Pages.html">Zumba</a></li>
+                            <li><a href="yoga.html">Yoga</a></li>
+                            <li><a href="taekwondo.html">Taekwondo</a></li>
+                            <li><a href="muaythai.html">Muay Thai</a></li>
+                        </ul>
+                    </div>
+                    <a href="bmi.html">BMI</a>
+                    <a href="booking.html">Booking</a>
+                    <a href="#footer">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="icons">
+            <a href="#" class="btn">Become a member</a>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+
+    </header>
+    <!--header section ends-->
+
+    <!--need this to make content appear below header-->
+    <div class="spacer-for-content">
+        &nbsp;
+    </div>
+
+    <video autoplay loop muted plays-inline class="main-video">
+        <source src="muaythai/muaythai_video.mp4" type="video/mp4">
+    </video>
+
+    <section class="content-section">
+        <!--
+        Introduction 
+        Personal Trainer  
+        Sessions Schedule 
+        Fee 
+        (+Video, 装备) 
+        -->
+        <div class="muaythai-main">
+            <h1>Muay Thai</h1>
+            <h2>The Art of Eight Limbs</h2>
+            <p>
+                Muay Thai, also known as the "Art of Eight Limbs," is a dynamic and powerful martial art originating from Thailand. 
+                It combines the use of fists, elbows, knees, and shins to deliver a full-body workout that enhances strength, 
+                agility, and endurance. Practiced by warriors for centuries, Muay Thai is not just about physical prowess; 
+                it is also about discipline, mental fortitude, and respect. Whether you're looking to improve your fitness, 
+                learn self-defense, or compete at a professional level, Muay Thai offers a rewarding path to personal growth and achievement.
+            </p>
+        </div>
+
+        <section class="market-section">
+            <div class="market-section-button">
+                <button onClick="document.getElementById('trainer-section').scrollIntoView()">View Trainer</button>
+            </div>
+            <div class="market-section-button">
+                <button onClick="document.getElementById('program-section').scrollIntoView()">Explore Muay Thai</button>
+            </div>
+            <div class="market-section-button">
+                <button onClick="document.getElementById('time-section').scrollIntoView()">See Schedule</button>
+            </div>
+        </section>
+
+        <section id="trainer-section" class="trainer-section">
+            <div class="trainer-text">
+                <h2>Head of Trainer</h2>
+                <h3>Rodtang Jitmuangnon</h3>
+                <p>
+                    We are proud to introduce Rodtang Jitmuangnon, the head trainer at Fitness Club's Muay Thai program. 
+                    Rodtang, often referred to as "The Iron Man," is a globally recognized Muay Thai champion with an 
+                    impressive record in the ring. Known for his relentless fighting style, unmatched technique, and 
+                    inspiring dedication, Rodtang brings a wealth of experience and passion to our training sessions. 
+                    Under his guidance, you will learn the true essence of Muay Thai, from fundamental techniques to 
+                    advanced strategies, all while building the mental and physical toughness that this martial art demands.
+                </p>
+            </div>
+            <div class="rodtang-image">
+                <img src="muaythai/Rodtang_Jitmuangnon.png" alt="Rodtang Trainer Image">
+            </div>
+        </section>
+
+        <section id="program-section" class="program-section">
+            <h2>Classes Available</h2>
+            <section class="program-class">
+                <div class="program-card">
+                    <div class="program-image program-1"></div>
+                    <h2>Basics Class</h2>
+                    <p>Learn the fundamentals of Muay Thai, including essential strikes, footwork, and defensive techniques, perfect for beginners to build a strong foundation.</p>
+                    <a href="https://en.wikipedia.org/wiki/Muay_Thai">View More Info</a>
+                </div>
+                <div class="program-card">
+                    <div class="program-image program-2"></div>
+                    <h2>Padding Class</h2>
+                    <p>Hone your power, speed, and precision with partner-based pad work, focusing on developing technique through targeted drills and combinations.</p>
+                    <a href="https://en.wikipedia.org/wiki/Focus_mitt">View More Info</a>
+                </div>
+                <div class="program-card">
+                    <div class="program-image program-3"></div>
+                    <h2>Advance Class</h2>
+                    <p>Elevate your skills with advanced techniques, including complex combinations, counters, and strategies designed for experienced practitioners.</p>
+                    <a href="https://youtu.be/rrMwAaYrmN4">View More Info</a>
+                </div>
+                <div class="program-card">
+                    <div class="program-image program-4"></div>
+                    <h2>Sparring</h2>
+                    <p>Put your skills to the test in controlled, live sparring sessions that simulate real fight scenarios, helping you apply what you've learned in a dynamic environment.</p>
+                    <a href="https://en.wikipedia.org/wiki/Sparring">View More Info</a>
+                </div>
+                <div class="program-card">
+                    <div class="program-image program-5"></div>
+                    <h2>Fight Camp</h2>
+                    <p>Prepare for competition with intensive training designed to build endurance, sharpen techniques, and enhance your mental toughness, tailored for aspiring fighters.</p>
+                    <a href="https://en.wikipedia.org/wiki/Training_camp">View More Info</a>
+                </div>
+            </section>
+        </section>
+
+        <section class="footage-section">
+            <h2>Introduction to Muay Thai</h2>
+            <iframe class="player" src="https://www.youtube.com/embed/XECsB8Hd1A4" title="Are you a Muay Thai beginner? Then watch this." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+        </section>
+
+        <section id="time-section" class="time-section">
+            <h2>Classes Schedule</h2>
+            <div class="schedule-container">
+                <!-- const martialArtsDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+                const martialArtsTimeSlots = {
+                Monday: ['9:00 AM - 10:00 AM', '10:00 AM - 11:00 AM'],
+                Tuesday: ['10:00 AM - 11:00 AM', '11:00 AM - 12:00 PM'],
+                Wednesday: ['12:00 PM - 1:00 PM', '1:00 PM - 2:00 PM'],
+                Thursday: ['4:00 PM - 5:00 PM', '5:00 PM - 6:00 PM']
+                }; -->
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Time Slot 1</th>
+                            <th>Time Slot 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>9:00 AM - 10:00 AM</td>
+                            <td>10:00 AM - 11:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>10:00 AM - 11:00 AM</td>
+                            <td>11:00 AM - 12:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>12:00 PM - 1:00 PM</td>
+                            <td>1:00 PM - 2:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>4:00 PM - 5:00 PM</td>
+                            <td>5:00 PM - 6:00 PM</td>
+                        </tr>
+                    </tbody>
+                </table>                   
+            </div>
+            
+            <div class="time-section-button">
+                <button onClick="location.href = 'booking.html';">Book Now</button>
+            </div>
+
+        </section>
+    </section>
+    
+    <!--footer section starts-->
+    <footer id="footer" class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h4>about</h4>
+                <div class="text">
+                    <p>
+                        This is an assignment for UCCD2323 Front-End Web Development Course in UTAR. 
+                        <br>The Author of this website are:
+                    </p>
+                </div>
+                <div class="author">
+                    <ul>
+                        <li>Chow Yong Xiang 2301664</li>
+                        <li>Loh Shin Yee 2203210​​</li>
+                        <li>Ng Jia Shan 2202567​</li>
+                        <li>Tan Shin Yi 2202568​​</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="box">
+                <h4>contact</h4>
+                <div class="text">
+                    <p>
+                        Follow us on social media to stay updated with the latest news, promotions, and events. We’re here to support you on your fitness journey—reach out to us anytime!
+                    </p>
+                </div>
+                <div class="icon">
+                    <a href="#">
+                        <i class="fas fa-map-marker-alt">
+                             Fitness Club
+                            123 Jalan Fitness,
+                            Taman Kesihatan,
+                            57000 Kuala Lumpur,
+                            Malaysia</i>
+                    </a>
+                    <br>
+                    <a href="#">
+                        <i class="fas fa-phone-alt">
+                             +60 12-345 6789
+                        </i>
+                    </a>
+                    <br>
+                    <a href="#">
+                        <i class="fas fa-envelope" style="text-transform: none;">
+                            clubfitness65@gmail.com
+                       </i>                       
+                    </a>
+                    <br>
+                    <a href="https://www.instagram.com/fitness_club_frontend?igsh=MTY5b2w4Mm9oeHMyMA==">
+                        <i class="fab fa-instagram">
+                             Instagram
+                        </i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer section end-->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var programButton = document.querySelector('.program-container > a'); // the element that triggers the dropdown
+            var programList = document.querySelector('.program-container ul'); // the dropdown list
+        
+            programButton.addEventListener('click', function(event) {
+                event.preventDefault(); // prevent the anchor tag from following the URL
+                programList.style.display = (programList.style.display == 'block' ? 'none' : 'block'); // toggle display
+            });
+        
+            // Optional: Click anywhere else to close the dropdown
+            document.addEventListener('click', function(event) {
+                if (!event.target.matches('.program-container, .program-container *')) {
+                    programList.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

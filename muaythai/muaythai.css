@@ -1,0 +1,734 @@
+/*Major Breakpoints: 600, 601, 768, 992, 1200 px*/
+/*id: #, class: .*/
+/*use class to style*/
+
+/*
+color: #hex
+font-family: a, b, c
+font-size: 70px
+font-weight: 100
+text-align: left
+text-decoration: underline
+text-transform: uppercase
+line-height: 70px
+word-spacing: 50px
+z-index: 100
+
+weidth: 100px
+height: 100px
+background-color: red
+padding: t r b l
+margin: t r b l
+float: left
+border: blue solid 10px
+cursor: pointer
+display: none
+visibility: hidden
+
+background-image: url()
+background-size: cover
+background-repeat: none
+background-position: center
+transition: all ease-in-out 1s
+
+(Flexbox: styling inside the container)
+display: flex
+flex-direction: row
+flex-wrap: wrap
+justify-content: space-between
+justify-content: center
+justify-content: flex-end
+justify-content: space-evenly
+align-content: normal
+gap: rowpx colpx
+row-gap: rowpx
+col-gap: colpx
+align-item: center
+
+(Flexbox inside the conponents within container)
+order: 1
+flex-basis: 100px
+flex-grow: 1
+flex-shrink: 1
+flex: grow shrink basis
+align-self: flex-end
+
+scroll-behavior: smooth
+*/
+
+/*
+body::after {
+    //pseudo-element, load everything after the body tag
+    (The code below pre-loads a image and make it not appear)
+    position: absolute
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    content: url() url() url() 
+}
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+ 
+
+:root{
+    --purple1: #2E073F;
+    --purple2: #7A1CAC;
+    --purple3: #AD49E1;
+    --purple4: #EBD3F8;
+    --pink1: #f73471;
+    --pink2: #9b244a;
+    --mint1: #5DEBD7;
+    --black: #000;
+    --light-color: #868e96;
+    --white: #fff;
+    --yellow: #F9E400;
+    /*
+    background: rgb(54,23,97);
+    background: linear-gradient(-90deg, rgba(54,23,97,1) 14%, rgba(150,53,148,1) 51%, rgba(146,217,227,1) 92%);
+    */
+}
+
+body {
+    background-color: (--white);
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 12px;
+}
+
+h6 {
+    font-size: 7px;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+/*to ensure smooth scroll transition */
+html {
+    scroll-behavior: smooth;
+}
+
+/*to ensure footer stick to bottom of screen*/
+body {
+    height: 200rem; /*this can be deleted*/
+    display: flex;
+    flex-direction: column;
+}
+
+/*----------------header section starts--------------*/
+
+.header{
+    position: fixed;
+    height: 124px;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 3rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,.1);
+    box-shadow: 0rem .1rem .5rem rgba(0,0,0,.1);
+    z-index: 1000;
+}
+
+.header .logo {
+    font-size: 1.6rem;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+.header .logo span{
+    color: #f73471;
+    text-transform: uppercase;
+}
+
+.header .navbar ul li{
+    display: inline-block;
+    list-style: none;
+    position: relative;
+}
+
+.header .navbar ul li a {
+    font-size: 1.3rem;
+    color: black;
+    margin: 0 1rem;
+}
+
+.header .navbar ul li a:hover{
+    color:#f73471;
+}
+
+.program-container ul{
+    position: absolute;
+    display: none;
+}
+
+.program-container ul li{
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.program-container:hover >ul{
+    display: block;
+}
+
+.header .navbar .program-container {
+    position: relative;
+    display: inline-block;
+}
+
+.header .navbar .program-container ul {
+    position: absolute;
+    background-color: white;
+    display: none;
+    margin-top: 1rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.header .navbar .program-container ul li {
+    display: block;
+}
+
+.header .navbar .program-container ul li a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+
+.header .login a {
+    font-size: 1.0rem;
+    letter-spacing: .1rem;
+    color: white;
+    background: #f73471;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: .8rem 2rem;
+    border: none;
+}
+
+.header .login a:hover {
+    color: #f73471;
+    background: rgb(255, 255, 255);
+}
+
+.navbar-color {
+    background: var(--purple4);
+    transition: 1s;
+    width: 100%;
+}
+
+/*-------header section ends-------*/
+
+.spacer-for-content {
+    width: 100%;
+    height: 110px;
+}
+
+/*-------starts of main content-------*/
+
+/* .cover-container {
+    background-image: url("image/Muay_Thai_Fight_Us_Vs_Burma_(80668065).jpeg");
+    opacity: 80%;
+    filter: saturate(0.4) blur(1px);
+    position: absolute;
+    top: 110px;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    height: 100vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.content-section {
+    margin-top: 20px;
+} */
+
+.main-video {
+    position: absolute;
+    filter: brightness(80%);
+    top: 105px;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.muaythai-main {
+    margin-top: 150px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 60%;
+    font-size: 80px;
+    flex-wrap: wrap;
+}
+
+.muaythai-main h1{
+    font-size: 72px;
+    font-weight: 600;
+    color: var(--pink1);
+}
+
+.muaythai-main h2{
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.muaythai-main p{
+    background-color: rgba(0,0,0,.8);
+    padding: 20px 20px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: white;
+    text-align: justify;
+}
+
+.market-section {
+    margin-top: 30px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 30px;
+}
+
+.market-section-button {    
+    padding: 10px 10px;
+    display: flex;
+    justify-content: left;
+}
+
+.market-section-button button {
+    background: var(--pink1);
+    color: var(--mint1);
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 20px;
+}
+
+.market-section-button button:hover {
+    background: transparent;
+    border: 2px solid var(--pink1);
+    cursor: pointer;
+}
+
+.trainer-section {
+    background-color: var(--purple1);
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.trainer-text {
+    width: 500px;
+    margin: 10px 10px;
+    padding: 20px 20px;
+}
+
+.trainer-text h2{
+    color: var(--pink1);
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.trainer-text h3{
+    font-size: 20px;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    color: var(--mint1);
+}
+
+.trainer-text p{
+    font-size: 16px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-align: justify;
+    color: var(--white);
+}
+
+.trainer-image {
+    margin: 10px 10px;
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+}
+
+.trainer-image img {
+    height: 400px;
+    width: 500px;
+}
+
+.program-section {
+    background-color: var(--purple1);
+    margin: 0px 0px;
+    padding: 10px 10px;    
+}
+
+.program-section > h2{
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    text-align: center;
+    color: var(--pink1);
+}
+
+.program-class {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.program-card {
+    background: var(--purple2);
+    width: 270px;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.program-image {
+    background-color: var(--white);
+    height: 200px;
+    margin-bottom: 15px;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.program-1 {
+    background-image: url("basic.jpg");
+}
+
+.program-2 {
+    background-image: url("padding.webp");
+}
+
+.program-3 {
+    background-image: url("The-Complete-Muay-Thai-Beginners-Guide.jpg");
+}
+
+.program-4 {
+    background-image: url("sparring.jpg");
+}
+
+.program-5 {
+    background-image: url("fightcamp.jpg");
+}
+
+.program-card h2{
+    padding: 10px;
+    color: var(--mint1);
+}
+
+.program-card p{
+    padding: 10px;
+    color: var(--white);
+}
+
+.program-card a{
+    background-color: black;
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    text-align: center;
+    margin: 20px 50px;
+    text-decoration: none;
+}
+
+.program-card:hover {
+    background-color: var(--purple3);
+    color: black;
+    transform: scale(1.03);
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+.footage-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--purple1);
+    padding: 50px 20px;
+    padding-bottom: 30px;
+}
+
+.footage-section h2 {
+    color: var(--pink1);
+    font-weight: bold;
+    font-size: 50px;
+    padding: 10px 10px;
+}
+
+.player {
+    aspect-ratio: 16/9;
+    width: 60%;
+}
+
+.time-section {
+    background-color: var(--purple1);
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.time-section h2 {
+    color: var(--pink1);
+    font-weight: bold;
+    font-size: 50px;
+    padding: 10px 10px;
+}
+
+.schedule-container {
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.schedule-table th, .schedule-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.schedule-table th {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.schedule-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.schedule-table td {
+    color: #333;
+}
+
+.schedule-table td:hover {
+    color: #007BFF;
+    cursor: pointer;
+}
+
+.time-section-button {
+    margin-top: 25px;
+    margin-bottom: 40px;
+    align-self: center;
+}
+
+.time-section-button button {
+    background: var(--pink1);
+    color: var(--mint1);
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 20px;    
+}
+
+.time-section-button button:hover {
+    background: transparent;
+    border: 2px solid var(--pink1);
+    cursor: pointer;
+}
+
+/*-------end of main content-------*/
+
+/*-------starts of footer-------*/
+
+.footer {
+    margin: 30px 0px;
+    margin-top: auto;
+    background: #222;
+}
+
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+    gap: 1.5rem;
+    margin: 10px 10px;
+    padding: 20px 20px;
+}
+
+.footer .box-container .box h4{
+    font-size: 1.7rem;
+    color: white;
+    font-weight: 600;
+    padding-bottom: 1rem;
+}
+
+.footer .box-container .box .text{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: normal;
+    line-height: 1.8;
+    padding-bottom: 1rem;
+}
+
+.footer .box-container .box .author{
+    color: white;
+    font-size: 0.8rem;
+    font-weight: normal;
+    line-height: 1.8;
+    padding-bottom: 1rem;
+}
+
+.footer .box-container .box .author ul{
+    list-style-type: none;
+}
+
+.footer .box-container .box .icon{
+    color: rgb(131, 0, 72);
+}
+
+.footer .box-container .box .icon a:hover{
+    color: rgb(255, 164, 182);
+}
+
+/*-------end of footer section-------*/
+
+@media (min-aspect-ratio: 16/9){
+    .main-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9){
+    .main-video {
+        width: auto;
+        height: 100%;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .main-video {
+        width: 100%;
+        height: auto;
+    }
+
+    .market-section,
+    .muaythai-main {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .trainer-section{
+        flex-wrap: wrap;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .main-video {
+        width: 100%;
+        height: auto;
+    }    
+
+}
+
+@media (max-width: 450px) {
+
+    html {
+        font-size: 50%;
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+/*------------------media queries for responsive-------------------*/
+
+@media (min-aspect-ratio: 16/9){
+    .main-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9){
+    .main-video {
+        width: auto;
+        height: 100%;
+    }
+}
